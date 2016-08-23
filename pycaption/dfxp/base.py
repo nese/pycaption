@@ -59,8 +59,6 @@ class DFXPReader(BaseReader):
             return False
 
     def read(self, content):
-        if type(content) != unicode:
-            raise InvalidInputError(u'The content is not a unicode string.')
 
         dfxp_document = self._get_dfxp_parser_class()(
             content, read_invalid_positioning=self.read_invalid_positioning)
